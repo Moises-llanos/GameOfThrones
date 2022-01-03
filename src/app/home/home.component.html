@@ -1,0 +1,45 @@
+
+
+<div class="home">
+
+    <mat-sidenav-container fullscreen>
+        <mat-sidenav mode="side" #sidenav>
+            <mat-toolbar>
+                <strong>Game Of Thrones</strong>
+                <button mat-icon-button (click)="sidenav.toggle(); estadoMenu = true">
+                    <mat-icon>chevron_left</mat-icon>
+                </button>
+            </mat-toolbar>
+            <mat-nav-list>
+                <a mat-list-item routerLink="listado"> 
+                    <mat-icon mat-list-icon>list</mat-icon>
+                    <strong>Listador de personajes</strong>
+                </a>
+                <a mat-list-item routerLink="buscar"> 
+                    <mat-icon mat-list-icon>search</mat-icon>
+                    <strong>Buscar personajes</strong>
+                </a>
+                <a mat-list-item routerLink="agregar"> 
+                    <mat-icon mat-list-icon>add</mat-icon>
+                    <strong>Agregar personajes</strong>
+                </a>
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-toolbar>
+            <button mat-icon-button (click)="sidenav.toggle(); estadoMenu = !estadoMenu" *ngIf="estadoMenu">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span class="spacer"></span>
+            <strong (click)="IrLogin()">Log Out</strong>
+        </mat-toolbar>
+
+
+
+        <div class="secciones">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-container>
+
+</div>
+

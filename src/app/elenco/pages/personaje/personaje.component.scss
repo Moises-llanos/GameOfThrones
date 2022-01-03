@@ -1,0 +1,47 @@
+
+
+
+.personaje {
+    
+
+    .personaje__container {
+        width: 70%;
+        height: 40%;
+        border: 1px solid #fff;
+        background-color: #fff;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row-reverse;
+        margin: 100px auto;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+        .personaje__img {
+            
+            img {
+                outline: 15px solid rgb(223, 217, 217);
+                height: 500px;
+                width: 500px;
+                object-fit: cover;
+                display: block;
+                border-radius: 30px;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            }
+        }
+
+        .personaje__details {
+            color: rgb(51, 46, 46);
+            width: 40%;
+
+            strong {
+                font-size: 40px;
+                margin: 30px 0;
+                display: block;
+                line-height: 40px;
+            }
+            
+            
+        }
+    }
+}

@@ -1,0 +1,27 @@
+
+
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card {
+    max-width: 300px;
+    height: auto;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: transform 500ms;
+    cursor: pointer;
+
+
+    img {
+        height: 300px;
+        object-fit: cover;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
