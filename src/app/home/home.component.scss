@@ -5,6 +5,12 @@
     flex: 1 1 auto;
 }
 
+.header {
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+}
+
 .mat-toolbar {
     background-color: #182436;
 }
