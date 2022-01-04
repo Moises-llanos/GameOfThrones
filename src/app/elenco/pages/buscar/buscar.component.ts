@@ -18,10 +18,7 @@ export class BuscarComponent implements OnInit {
   constructor(private service: ElencoService, 
               private router: Router) { }
 
-  ngOnInit(): void {
-
-    
-  }
+  ngOnInit(): void {}
 
 
   sugerenciasPersonajes(){

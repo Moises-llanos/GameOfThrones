@@ -1,6 +1,10 @@
 
 
 
+.active {
+    background-color: rgb(71, 218, 71);
+}
+
 .spacer {
     flex: 1 1 auto;
 }
@@ -12,13 +16,14 @@
 }
 
 .mat-toolbar {
-    background-color: #1a314d;
+    background-color: #0D1029;
 }
 
 .mat-sidenav {
-    background-color: #102031;
+    background-color: #0C0E26;
+    border-color: #0C0E26;
 }
 
 .mat-sidenav-container {
-    background-color: #15283E;
+    background-color: #0E112B;
 }
