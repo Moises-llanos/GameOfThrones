@@ -2,13 +2,25 @@
 
 
 .active {
-    background-color: rgb(71, 218, 71);
+    border-radius: 40px;
+    background-color: #23253A;
 }
 
 .spacer {
     flex: 1 1 auto;
 }
 
+.btn-primero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    border-radius: 50%;
+    border: 1px solid #23253A;
+    background-color: #23253A;
+}
 .header {
     position: sticky;
     z-index: 1000;
@@ -20,8 +32,13 @@
 }
 
 .mat-sidenav {
+    padding: 0 20px;
     background-color: #0C0E26;
     border-color: #0C0E26;
+
+    .mat-toolbar {
+        margin-bottom: 20px;
+    }
 }
 
 .mat-sidenav-container {
