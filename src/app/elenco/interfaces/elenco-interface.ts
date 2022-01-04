@@ -8,3 +8,9 @@ export interface Personaje {
     image:     string;
     imageUrl:  string;
 }
+
+
+export interface IUser {
+    email: string
+    password: string | number
+}

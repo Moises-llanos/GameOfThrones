@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://thronesapi.com/api/v2/Characters'
+  baseUrl: 'http://localhost:3000/personaje'
 };
 
 /*

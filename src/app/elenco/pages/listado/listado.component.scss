@@ -1,5 +1,16 @@
 
 
+.listado {
+
+    h1 {
+        text-align: center;
+        margin: 25px 0;
+        font-size: 45px;
+        font-family: 'Fjalla One';
+        letter-spacing: 1px;
+    }
+}
+
 
 .cards {
     display: flex;
@@ -8,6 +19,7 @@
     flex-wrap: wrap;
 }
 .card {
+    background-color: #0d1723;
     max-width: 300px;
     height: auto;
     margin: 10px;

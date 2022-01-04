@@ -6,6 +6,7 @@ import { BuscarComponent } from "./pages/buscar/buscar.component";
 import { ListadoComponent } from "./pages/listado/listado.component";
 import { PersonajeComponent } from "./pages/personaje/personaje.component";
 import { AgregarComponent } from './pages/agregar/agregar.component';
+import { FormsModule } from "@angular/forms";
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AgregarComponent } from './pages/agregar/agregar.component';
     imports: [
         ElencoRoutingModule,
         Material,
-        CommonModule
+        CommonModule,
+        FormsModule
     ],
     providers: []
 })

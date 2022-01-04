@@ -82,6 +82,22 @@ $border-color: rgb(128, 128, 128, .7);
                color: #7B1FA2;
                cursor: pointer;
            }
+
+
+           .error {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               height: 30px;
+               border: 1px solid rgb(243, 126, 126);
+               background-color: rgb(243, 126, 126);
+               border-radius: 10px;
+               width: 90%;
+               margin: 0 auto;
+               color: #fff;
+               transition: all 500ms;
+               letter-spacing: .9px;
+           }
            
         }
     }
