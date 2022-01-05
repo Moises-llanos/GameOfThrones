@@ -26,6 +26,8 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transition: transform 500ms;
     cursor: pointer;
+    animation-name: Card;
+    animation-duration: 1000ms;
 
 
     img {
@@ -36,4 +38,17 @@
     &:hover {
         transform: scale(1.05);
     }
+}
+
+
+@keyframes Card {
+    0% {
+        transform: scale(.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+    // 100% {
+    //     transform: scale(1.05);
+    // }
 }

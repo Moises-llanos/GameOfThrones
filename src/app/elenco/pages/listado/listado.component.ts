@@ -8,7 +8,10 @@ import { ElencoService } from '../../services/elenco.service';
   styleUrls: ['./listado.component.scss']
 })
 export class ListadoComponent implements OnInit {
+
   listadoActores: Personaje[] = [];
+  estadoButon: boolean = true;
+
 
   constructor(private service: ElencoService) { }
 
@@ -19,7 +22,22 @@ export class ListadoComponent implements OnInit {
 
   getAllUsers(){
     this.service.getAllUsers()
-    .subscribe(actores=> this.listadoActores = actores)
+    .subscribe(actores=> {
+
+      this.listadoActores = actores;
+      this.listadoActores = this.listadoActores.splice(0, 5)
+    })
 }
+
+  verMas(){
+    this.service.getAllUsers()
+    .subscribe(actores=> {
+      this.estadoButon = false;
+
+      setTimeout(()=> {
+        this.listadoActores = actores;
+      }, 500)
+    })
+  }
 
 }

@@ -13,7 +13,7 @@ import { IUser, Personaje } from "../interfaces/elenco-interface";
 export class ElencoService {
 
     private url: string = environment.baseUrl;
-    private login: string = 'http://localhost:3000/users';
+    private login: string = environment.login;
 
     constructor(private http: HttpClient){}
 
@@ -38,6 +38,19 @@ export class ElencoService {
 
     getUsersDataBase(): Observable<IUser[]>{
        return this.http.get<IUser[]>(this.login)
+    }
+
+    crearPersonaje(personaje: Personaje): Observable<Personaje> {
+       return this.http.post<Personaje>(`${this.url}`, personaje);
+    }
+
+    actualizarPersonaje(personaje: Personaje): Observable<Personaje> {
+       return this.http.post<Personaje>(`${this.url}/${personaje.id}`, personaje);
+    }
+
+
+    eliminarPersonaje(id: number): Observable<Personaje>{
+      return this.http.delete<Personaje>(`${this.url}/${id}`)
     }
 
     

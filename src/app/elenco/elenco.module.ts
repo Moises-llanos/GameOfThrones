@@ -7,6 +7,7 @@ import { ListadoComponent } from "./pages/listado/listado.component";
 import { PersonajeComponent } from "./pages/personaje/personaje.component";
 import { AgregarComponent } from './pages/agregar/agregar.component';
 import { FormsModule } from "@angular/forms";
+import { CardComponent } from "./components/card/card.component";
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FormsModule } from "@angular/forms";
         ListadoComponent,
         BuscarComponent,
         PersonajeComponent,
-        AgregarComponent
+        AgregarComponent,
+        CardComponent
     ],
     exports: [],
     imports: [

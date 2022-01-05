@@ -6,18 +6,6 @@
     </div>
 
     <ng-template #divPersonaje>
-        <div class="personaje__container animate__animated animate__bounceInRight">
-            <div class="personaje__img">
-                <img [src]="personaje.imageUrl" alt="">
-            </div>
-            <div class="personaje__details">
-                <strong>{{personaje.title}}</strong>
-                <!-- <strong>Busca Tú Personaje Favorito</strong> -->
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, totam mollitia numquam explicabo voluptate aperiam vero voluptatum possimus ullam, repellendus nemo vitae maiores culpa odit reiciendis fugiat ipsum dolor recusandae!</p>
-                <strong>{{personaje.fullName}}</strong>
-                <h2>{{personaje.family}}</h2>
-                <button mat-raised-button color="warn" (click)="volverListado()">Volver</button>
-            </div>
-        </div>
+        <app-card [personaje]="personaje"></app-card>
     </ng-template>
 </div>

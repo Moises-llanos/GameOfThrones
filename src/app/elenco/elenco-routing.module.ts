@@ -27,6 +27,10 @@ const routes: Routes = [
                 component: AgregarComponent
             },
             {
+                path: 'editar/:id',
+                component: AgregarComponent
+            },
+            {
                 path: '**',
                 redirectTo: 'listado'
             }

@@ -16,11 +16,13 @@
                     <mat-icon>visibility</mat-icon>
                     Ver Mas
                 </button>
-                <button mat-raised-button color="primary">
+                <button mat-raised-button color="primary" [routerLink]="['../editar', item.id]">
                     Editar
                     <mat-icon>edit</mat-icon>
                 </button>
             </mat-card-actions>
         </mat-card>
     </div>
+    <button style="display: block; margin: 30px auto;" mat-raised-button color="warn" (click)="verMas()" *ngIf="estadoButon && listadoActores">Ver Mas</button>
+    <mat-spinner style="display: block; margin: 30px auto; width: 100px;" *ngIf="estadoButon == false && listadoActores.length < 52"></mat-spinner>
 </div>

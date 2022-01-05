@@ -1,0 +1,71 @@
+
+
+.agregar {
+    overflow: hidden;
+
+
+    
+
+.personaje__container {
+        
+    width: 80%;
+    height: 60%;
+    border: 1px solid #fff;
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    margin: 70px auto;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+    .personaje__img {
+        
+        img {
+            outline: 15px solid rgb(223, 217, 217);
+            height: 500px;
+            width: 500px;
+            object-fit: cover;
+            display: block;
+            border-radius: 30px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+    }
+
+    .personaje__details {
+        width: 100%;
+        h2 {
+            color: #938585;
+            font-family: "Fjalla One";
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .input__text {
+            padding: 7px 5px;
+            border: 1px solid rgba(179, 168, 168, 0.5);
+            border-radius: 7px;
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            transition: transform 500ms;
+
+            &:focus {
+                outline: 1px solid #7B1FA2;
+                transform: scale(1.05);
+            }
+        }
+
+        button {
+            display: block;
+            margin: 10px auto;
+            width: 80%;
+            background-color: #FE6A68;
+        }
+        
+        
+    }
+}
+}
