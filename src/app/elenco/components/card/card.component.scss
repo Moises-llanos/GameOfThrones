@@ -4,15 +4,16 @@
         
     width: 80%;
     height: 50%;
-    border: 1px solid #fff;
-    background-color: #fff;
+    border: 1px solid rgb(255, 255, 255, .3);
+    background-color: rgb(255, 255, 255, .3);
+    backdrop-filter: blur(30px);
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: row-reverse;
     margin: 70px auto;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    box-shadow: rgb(57, 66, 75) 0px 20px 30px -10px;
 
     .personaje__img {
         
@@ -28,7 +29,7 @@
     }
 
     .personaje__details {
-        color: rgb(51, 46, 46);
+        color: #fff;;
         width: 40%;
 
         strong {
@@ -38,6 +39,10 @@
             line-height: 40px;
         }
         
+
+        button {
+            background-color: #af5166;
+        }
         
     }
 }
