@@ -8,6 +8,7 @@ import { PersonajeComponent } from "./pages/personaje/personaje.component";
 import { AgregarComponent } from './pages/agregar/agregar.component';
 import { FormsModule } from "@angular/forms";
 import { CardComponent } from "./components/card/card.component";
+import { ImagenPipe } from "./pipes/imagen.pipe";
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { CardComponent } from "./components/card/card.component";
         BuscarComponent,
         PersonajeComponent,
         AgregarComponent,
-        CardComponent
+        CardComponent,
+        ImagenPipe
     ],
     exports: [],
     imports: [

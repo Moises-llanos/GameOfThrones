@@ -2,7 +2,7 @@
 
  <div class="personaje__container animate__animated animate__bounceInRight" *ngIf="personaje">
     <div class="personaje__img">
-        <img [src]="personaje.imageUrl" alt="">
+        <img [src]="personaje | imagen" alt="">
     </div>
     <div class="personaje__details">
         <strong>{{personaje.title}}</strong>
