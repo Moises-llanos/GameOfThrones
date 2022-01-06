@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Personaje } from '../../interfaces/elenco-interface';
 import { ElencoService } from '../../services/elenco.service';
+import { switchMap, tap  } from 'rxjs/operators';
 
 @Component({
   selector: 'app-agregar',
@@ -20,9 +21,15 @@ export class AgregarComponent implements OnInit {
     lastName: ''
   }
   constructor(private router: Router, 
-              private service: ElencoService) { }
+              private service: ElencoService, 
+              private activedRouted: ActivatedRoute) { }
 
   ngOnInit(): void {
+    if(this.router.url == '/home/agregar') return;
+    this.activedRouted.params
+    .pipe(switchMap(({id})=> this.service.getPersonajeById(id)),
+    tap(res=> console.log(res)))
+    .subscribe((personaje:Personaje) => this.personaje = personaje)
   }
 
   volverListado(){
@@ -31,9 +38,26 @@ export class AgregarComponent implements OnInit {
 
   guardar(){
     if(this.personaje.firstName.length == 0) return;
-     this.service.crearPersonaje(this.personaje)
-     .subscribe(personaje=> console.log(personaje))
-     this.router.navigate(['home/listado'])
+    console.log(this.personaje.id)
+    if(this.personaje.id){
+      this.service.actualizarPersonaje(this.personaje)
+      .subscribe(res=> {
+        console.log('Actualizado Perfectamente');
+        this.router.navigate(['listado'])
+      })
+    }else {
+      this.service.crearPersonaje(this.personaje)
+      .subscribe(personaje=> console.log(personaje))
+      this.router.navigate(['home/listado'])
+    }
+  }
+
+
+  eleminarPersonaje(){
+    this.service.eliminarPersonaje(this.personaje.id!)
+    .subscribe(res=> {
+      this.router.navigate(['listado'])
+    })
   }
 
 }

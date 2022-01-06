@@ -3,10 +3,10 @@
     
     <div class="personaje__container animate__animated animate__zoomIn" *ngIf="personaje">
         <div class="personaje__img">
-            <img src="assets/img/perfil.webp" alt="">
+            <img [src]=" personaje.id ? personaje.imageUrl: 'assets/img/perfil.webp' " alt="">
         </div>
         <div class="personaje__details">
-            <h2>Crear Personaje {{personaje.firstName}} </h2>
+            <h2>{{personaje.id ? 'Actualizar' :'Crear'}} Personaje {{personaje.firstName}} </h2>
             <input type="text" placeholder="firstName" class="input__text" [(ngModel)]="personaje.firstName">
             <input type="text" placeholder="lastName" class="input__text" [(ngModel)]="personaje.lastName">
             <input type="text" placeholder="fullName" class="input__text" [(ngModel)]="personaje.fullName">
@@ -14,7 +14,10 @@
             <input type="text" placeholder="family" class="input__text" [(ngModel)]="personaje.family">
             <input type="text" placeholder="image" class="input__text" [(ngModel)]="personaje.image">
             <input type="text" placeholder="imageUrl" class="input__text" [(ngModel)]="personaje.imageUrl">
-            <button mat-raised-button (click)="guardar()"><mat-icon mat-list-icon>add</mat-icon>Crear Personaje</button>
+            <div class="btn">
+                <button class="btn-1" mat-raised-button (click)="guardar()"><mat-icon mat-list-icon>add</mat-icon> {{personaje.id ? 'Actualizar Personaje': 'Crear Personaje'}}</button>
+                <button class="btn-2" mat-raised-button color="warn" *ngIf="personaje.id" (click)="eleminarPersonaje()">Elimar</button>
+            </div>
         </div>
     </div>
 </div>

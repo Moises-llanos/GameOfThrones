@@ -45,7 +45,7 @@ export class ElencoService {
     }
 
     actualizarPersonaje(personaje: Personaje): Observable<Personaje> {
-       return this.http.post<Personaje>(`${this.url}/${personaje.id}`, personaje);
+       return this.http.put<Personaje>(`${this.url}/${personaje.id}`, personaje);
     }
 
 
