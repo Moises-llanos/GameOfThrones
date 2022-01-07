@@ -13,7 +13,7 @@
             <input type="email" placeholder="Email" [(ngModel)]="email" (focus)="limpiarError()">
             <div class="error" *ngIf="error == true"><strong>Email No Valido</strong></div>
             <input type="password" placeholder="Password">
-            <button mat-raised-button color="primary" (click)="getUsersByEmail(email)">{{'iniciar sesion' | uppercase}}</button>
+            <button mat-raised-button color="primary" (click)="getUsersByEmail()">{{'iniciar sesion' | uppercase}}</button>
             <p>¿Has Olvidado tu contraseña?</p>
         </div>
     </div>

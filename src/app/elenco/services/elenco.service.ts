@@ -2,21 +2,18 @@ import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
-import { IUser, Personaje } from "../interfaces/elenco-interface";
-
+import { Personaje } from "../interfaces/elenco-interface";
 
 @Injectable({
     providedIn: 'root'
 })
 
-
 export class ElencoService {
 
     private url: string = environment.baseUrl;
-    private login: string = environment.login;
+
 
     constructor(private http: HttpClient){}
-
 
     getAllUsers(): Observable<Personaje[]>{
        return this.http.get<Personaje[]>(this.url)
@@ -36,10 +33,6 @@ export class ElencoService {
        return this.http.get<Personaje[]>(this.url, {params})
     }
 
-    getUsersDataBase(): Observable<IUser[]>{
-       return this.http.get<IUser[]>(this.login)
-    }
-
     crearPersonaje(personaje: Personaje): Observable<Personaje> {
        return this.http.post<Personaje>(`${this.url}`, personaje);
     }
@@ -53,6 +46,5 @@ export class ElencoService {
       return this.http.delete<Personaje>(`${this.url}/${id}`)
     }
 
-    
 
 }

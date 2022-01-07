@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { IAuth } from "../auth/interfaces/auth.interfaces";
+import { AuthServices } from "../auth/services/auth.service";
 import { Personaje } from "../elenco/interfaces/elenco-interface";
 import { ElencoService } from "../elenco/services/elenco.service";
 
@@ -13,10 +15,13 @@ import { ElencoService } from "../elenco/services/elenco.service";
 export class HomeComponent implements OnInit { 
 
 
+    get Auth(): IAuth{
+       return this.authService.Auth
+    }
     
     estadoMenu: boolean = true; 
-    constructor(private service: ElencoService, 
-                private router: Router){};
+    constructor(private router: Router, 
+                private authService: AuthServices){};
 
 
     ngOnInit(): void {

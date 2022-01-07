@@ -11,6 +11,6 @@ export interface Personaje {
 
 
 export interface IUser {
-    email: string
-    password: string | number
+    email:      string
+    password:   string | number
 }

@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { Router } from "@angular/router";
 import { IUser } from "src/app/elenco/interfaces/elenco-interface";
 import { ElencoService } from "src/app/elenco/services/elenco.service";
+import { AuthServices } from "../../services/auth.service";
 
 
 @Component({
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
     users: any
     error: boolean = false;
 
-    constructor(private service: ElencoService,
+    constructor(private service: AuthServices,
         private router: Router){};
 
     ngOnInit(): void {
@@ -26,16 +27,11 @@ export class LoginComponent implements OnInit {
         
     }
 
-    getUsersByEmail(email: string){
-        this.service.getUsersDataBase()
+    getUsersByEmail(){
+        this.service.getUsersLogin()
         .subscribe(users=> {
-            const user = users.find(user=> user.email === email);
-            if(!user){
-                this.error = true;
-            }else {
-                this.users = user;
-                this.router.navigate(['listado'])
-            }
+            this.users = users;
+            this.router.navigate(['./listado'])
         })
 
         this.email = '';

@@ -24,12 +24,13 @@ export class AgregarComponent implements OnInit {
               private service: ElencoService, 
               private activedRouted: ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     if(this.router.url == '/home/agregar') return;
     this.activedRouted.params
     .pipe(switchMap(({id})=> this.service.getPersonajeById(id)),
     tap(res=> console.log(res)))
     .subscribe((personaje:Personaje) => this.personaje = personaje)
+
   }
 
   volverListado(){
@@ -37,15 +38,16 @@ export class AgregarComponent implements OnInit {
   }
 
   guardar(){
-    if(this.personaje.firstName.length == 0) return;
-    console.log(this.personaje.id)
-    if(this.personaje.id){
+    if(this.personaje.firstName.length === 0) return;
+
+    if(this.personaje.id || this.personaje.id == 0){
       this.service.actualizarPersonaje(this.personaje)
       .subscribe(res=> {
         console.log('Actualizado Perfectamente');
-        this.router.navigate(['listado'])
+        this.router.navigate(['home/actor/', this.personaje.id])
       })
     }else {
+      console.log(this.personaje.firstName.length)
       this.service.crearPersonaje(this.personaje)
       .subscribe(personaje=> console.log(personaje))
       this.router.navigate(['home/listado'])
